@@ -6,7 +6,7 @@ import Header from "./components/Header";
 
 export default function App() {
   return (
-    <div className="min-h-[100dvh] flex flex-col">
+    <div className="app">
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
