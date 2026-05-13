@@ -1,0 +1,221 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fafafa;
+  --foreground: #18181b;
+  --color-primary: #09090b;
+  --color-muted: #71717a; 
+  --color-border: rgba(228, 228, 231, 0.6);
+  --color-surface: #ffffff;
+  --color-surface-ghost: #f4f4f5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+
+
+/*앱 전체*/
+.app {
+  min-height: 100dvh;
+}
+
+/*페이지 공통 레이아웃*/
+.page {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+/*카드*/
+.card {
+  background: var(--color-surface);
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.05);
+}
+
+/*버튼*/
+.btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+
+.btn-disabled {
+  background: var(--color-surface-ghost);
+  color: #a1a1aa;
+  cursor: not-allowed;
+}
+
+/*배지(사용가능, 사용중, 준비중 표시하는 거기)*/
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.badge-green {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.badge-red {
+  background: #fff1f2;
+  color: #be123c;
+}
+
+.badge-gray {
+  background: var(--color-surface-ghost);
+  color: #52525b;
+}
+
+/*헤더*/
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  border-bottom: 1px solid var(--color-border);
+  background: rgba(250, 250, 250, 0.6);
+  backdrop-filter: blur(12px);
+}
+
+/*헤더 날개 레이아웃*/
+.header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*헤더 왼쪽 영역*/
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/*로고*/
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #09090b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-icon span {
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #09090b;
+}
+
+/*네비게이션 탭*/
+.nav-tab {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #71717a;
+  border: 1px solid transparent;
+}
+
+.nav-tab:hover {
+  color: #27272a;
+}
+
+.nav-tab.active {
+  background: white;
+  color: #09090b;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  border-color: var(--color-border);
+}
+
+/*네비게이션 탭 묶음*/
+.nav-pill {
+  display: flex;
+  align-items: center;
+  background: rgba(244, 244, 245, 0.8);
+  border-radius: 999px;
+  padding: 4px;
+  border: 1px solid var(--color-border);
+}
+
+/*히어로배너*/
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  background: linear-gradient(to right, #fafafa, #ffffff);
+}
+
+/*히어로배너 제목*/
+.hero-title {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.02em; /*자간 좁히면 이쁨*/
+  color: #09090b;
+}
+
+/*히어로배너 설명*/
+.hero-desc {
+  font-size: 14px;
+  color: #71717a;
+  margin-top: 4px;
+}
+
+/*카테고리 버튼*/
+.category-btn {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.15s;
+  background: white;
+  color: #52525b;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+}
